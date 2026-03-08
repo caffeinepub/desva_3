@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1rem;
+
+    /* ── DESVA Pastel Pink Luxury Palette ── */
+    /* background: warm cream */
+    --background: 0.975 0.008 60;
+    /* foreground: deep rose-brown */
+    --foreground: 0.22 0.03 15;
+
+    /* card: soft blush white */
+    --card: 0.99 0.006 50;
+    --card-foreground: 0.22 0.03 15;
+
+    /* popover */
+    --popover: 0.99 0.006 50;
+    --popover-foreground: 0.22 0.03 15;
+
+    /* primary: rose gold pink */
+    --primary: 0.56 0.12 15;
+    --primary-foreground: 0.99 0.005 50;
+
+    /* secondary: pale blush */
+    --secondary: 0.94 0.025 15;
+    --secondary-foreground: 0.42 0.05 15;
+
+    /* muted: very soft pink */
+    --muted: 0.96 0.015 20;
+    --muted-foreground: 0.48 0.04 15;
+
+    /* accent: dusty rose */
+    --accent: 0.88 0.055 15;
+    --accent-foreground: 0.32 0.06 15;
+
+    /* destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* border: soft petal pink */
+    --border: 0.89 0.03 15;
+    --input: 0.92 0.02 15;
+    --ring: 0.56 0.12 15;
+
+    /* charts */
+    --chart-1: 0.56 0.12 15;
+    --chart-2: 0.75 0.08 30;
+    --chart-3: 0.55 0.10 350;
+    --chart-4: 0.80 0.06 60;
+    --chart-5: 0.45 0.12 20;
+
+    /* sidebar */
+    --sidebar: 0.97 0.01 30;
+    --sidebar-foreground: 0.22 0.03 15;
+    --sidebar-primary: 0.56 0.12 15;
+    --sidebar-primary-foreground: 0.99 0.005 50;
+    --sidebar-accent: 0.94 0.025 15;
+    --sidebar-accent-foreground: 0.42 0.05 15;
+    --sidebar-border: 0.89 0.03 15;
+    --sidebar-ring: 0.56 0.12 15;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Garamond", "Georgia", "Times New Roman", serif;
+  }
+}
+
+/* ── Custom utility classes ─────────────────────────────────── */
+@layer utilities {
+  .font-display {
+    font-family: "Didot", "Bodoni MT", "Playfair Display", "Georgia", "Times New Roman", serif;
+  }
+
+  .font-serif-elegant {
+    font-family: "Garamond", "Palatino Linotype", "Book Antiqua", "Palatino", "Georgia", serif;
+  }
+
+  .font-body {
+    font-family: "Helvetica Neue", "Arial", sans-serif;
+  }
+
+  /* Petal background pattern */
+  .bg-petal-pattern {
+    background-image: 
+      radial-gradient(ellipse 80px 110px at 10% 15%, oklch(0.93 0.04 15 / 0.40) 0%, transparent 65%),
+      radial-gradient(ellipse 60px 90px at 85% 70%, oklch(0.90 0.05 350 / 0.30) 0%, transparent 65%),
+      radial-gradient(ellipse 100px 70px at 50% 95%, oklch(0.95 0.03 30 / 0.25) 0%, transparent 65%),
+      radial-gradient(ellipse 70px 100px at 92% 12%, oklch(0.92 0.04 20 / 0.35) 0%, transparent 65%),
+      radial-gradient(ellipse 55px 80px at 35% 55%, oklch(0.94 0.035 10 / 0.20) 0%, transparent 65%);
+  }
+
+  .bg-hero-gradient {
+    background: linear-gradient(
+      145deg,
+      oklch(0.97 0.022 25) 0%,
+      oklch(0.96 0.032 12) 30%,
+      oklch(0.95 0.038 355) 55%,
+      oklch(0.965 0.028 20) 75%,
+      oklch(0.975 0.015 45) 100%
+    );
+  }
+
+  .text-rose-gold {
+    color: oklch(0.56 0.12 15);
+  }
+
+  .bg-blush {
+    background-color: oklch(0.93 0.04 15);
+  }
+
+  .bg-petal {
+    background-color: oklch(0.97 0.02 20);
+  }
+
+  .bg-cream {
+    background-color: oklch(0.975 0.008 60);
+  }
+
+  .shadow-petal {
+    box-shadow: 0 4px 24px oklch(0.56 0.12 15 / 0.12), 0 1px 4px oklch(0.56 0.12 15 / 0.08);
+  }
+
+  .shadow-petal-lg {
+    box-shadow: 0 8px 40px oklch(0.56 0.12 15 / 0.18), 0 2px 8px oklch(0.56 0.12 15 / 0.10);
+  }
+
+  .border-rose-soft {
+    border-color: oklch(0.86 0.05 15);
+  }
+}
+
+/* ── Polaroid frame styles ─────────────────────────────────── */
+.polaroid-frame {
+  background: white;
+  padding: 10px 10px 34px 10px;
+  box-shadow: 0 4px 16px oklch(0.22 0.03 15 / 0.15), 0 1px 4px oklch(0.22 0.03 15 / 0.10);
+  position: relative;
+  display: inline-block;
+}
+
+.polaroid-inner {
+  background: oklch(0.93 0.012 40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: oklch(0.65 0.04 30);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ── Card fold effect for Customized Cards ───────────────────── */
+.card-fold {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-fold::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 32px 32px 0;
+  border-color: transparent oklch(0.88 0.05 15) transparent transparent;
+  z-index: 1;
+}
+
+.card-fold::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 28px 28px 0;
+  border-color: transparent oklch(0.975 0.008 60) transparent transparent;
+  z-index: 2;
+}
+
+/* ── Scrollbar styling ───────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: oklch(0.96 0.015 20);
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.82 0.06 15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.68 0.09 15);
+}
+
+/* ── Floral decorative elements ──────────────────────────────── */
+.floral-decoration {
+  position: relative;
+}
+
+.floral-decoration::before,
+.floral-decoration::after {
+  content: "✦";
+  color: oklch(0.78 0.08 15);
+  font-size: 0.8rem;
+  margin: 0 0.75rem;
+  opacity: 0.6;
+}
